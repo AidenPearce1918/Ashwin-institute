@@ -45,6 +45,30 @@ ashwin-institute/
 ### Prerequisites
 - Any modern web browser (Chrome, Firefox, Safari, Edge)
 - No server required for basic functionality
+- Git installed (for GitHub Pages deployment)
+
+### Deployment on GitHub Pages
+
+The website is automatically deployed to GitHub Pages when you push to the main branch!
+
+1. **Push to Repository**
+   ```bash
+   git add .
+   git commit -m "Your message"
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages**
+   - Go to repository Settings → Pages
+   - Select Source: `Deploy from a branch`
+   - Select Branch: `gh-pages` (automatically created by workflow)
+   - Select Folder: `/ (root)`
+   - Click Save
+
+3. **Access Your Website**
+   ```
+   https://yourusername.github.io/Ashwin-institute
+   ```
 
 ### Running Locally
 
