@@ -341,10 +341,15 @@ body {
         gap: 0;
         padding: 2rem 0;
         box-shadow: var(--shadow);
+        z-index: 999;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        pointer-events: none;
     }
 
     .nav-menu.active {
         left: 0;
+        pointer-events: auto;
     }
 
     .nav-link {

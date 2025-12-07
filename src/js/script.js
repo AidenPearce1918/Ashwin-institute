@@ -4,7 +4,8 @@ const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Toggle mobile menu
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
     navMenu.classList.toggle('active');
     hamburger.classList.toggle('active');
 });
@@ -15,6 +16,17 @@ navLinks.forEach(link => {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
     });
+});
+
+// Close menu when clicking outside (but not on hamburger)
+document.addEventListener('click', (e) => {
+    const isClickInsideMenu = navMenu.contains(e.target);
+    const isClickOnHamburger = hamburger.contains(e.target);
+    
+    if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
 });
 
 // Active navigation link based on scroll position
