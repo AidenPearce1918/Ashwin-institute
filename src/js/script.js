@@ -87,6 +87,62 @@ document.querySelectorAll('.feature-card, .stat-item').forEach(el => {
     observer.observe(el);
 });
 
+// Faculty modal functionality
+const facultyCards = document.querySelectorAll('.faculty-card');
+const facultyModal = document.getElementById('facultyModal');
+const modalTitle = document.querySelector('.modal-content #modal-title');
+const modalSubject = document.querySelector('.modal-subject');
+const modalQualifications = document.querySelector('.modal-qualifications');
+const modalExperience = document.querySelector('.modal-experience');
+const modalSpecialty = document.querySelector('.modal-specialty');
+const modalBook = document.getElementById('modalBook');
+
+function openFacultyModal(card) {
+    const name = card.dataset.name;
+    const subject = card.dataset.subject;
+    const qual = card.dataset.qualifications;
+    const exp = card.dataset.experience;
+    const spec = card.dataset.specialty;
+
+    modalTitle.textContent = name;
+    modalSubject.textContent = subject;
+    modalQualifications.textContent = qual;
+    modalExperience.textContent = exp;
+    modalSpecialty.textContent = 'Specialization: ' + spec;
+
+    // set Book Demo link to contact page with subject prefilled
+    const subjectParam = encodeURIComponent(`Book demo with ${name} (${subject})`);
+    modalBook.setAttribute('href', `../pages/contact.html?subject=${subjectParam}`);
+
+    facultyModal.hidden = false;
+    // move focus into modal
+    facultyModal.querySelector('.modal-close').focus();
+}
+
+function closeFacultyModal() {
+    facultyModal.hidden = true;
+}
+
+facultyCards.forEach(card => {
+    card.addEventListener('click', () => openFacultyModal(card));
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openFacultyModal(card);
+        }
+    });
+    card.setAttribute('tabindex', '0');
+});
+
+// Close handlers
+document.querySelectorAll('[data-modal-close]').forEach(el => el.addEventListener('click', closeFacultyModal));
+document.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', closeFacultyModal));
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && facultyModal && facultyModal.getAttribute('aria-hidden') === 'false') {
+        closeFacultyModal();
+    }
+});
+
 // Add fade-in animation
 const style = document.createElement('style');
 style.textContent = `

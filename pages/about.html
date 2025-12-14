@@ -37,6 +37,25 @@
         </div>
     </section>
 
+    <!-- Faculty Detail Modal -->
+    <div id="facultyModal" class="modal" hidden>
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button type="button" class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-content">
+                <h2 id="modal-title">Faculty Name</h2>
+                <p class="modal-subject">Subject</p>
+                <p class="modal-qualifications"></p>
+                <p class="modal-experience"></p>
+                <p class="modal-specialty"></p>
+                <div class="modal-actions">
+                    <a id="modalBook" class="btn btn-primary" href="#">Book Demo</a>
+                    <button type="button" class="btn btn-secondary" data-modal-close>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content -->
     <section class="page-content">
         <div class="container">
@@ -65,7 +84,7 @@
             <div class="content-section">
                 <h2>Our Expert Faculty</h2>
                 <div class="achievements-grid">
-                    <article class="achievement-item faculty-card" aria-labelledby="faculty-math">
+                    <article class="achievement-item faculty-card" aria-labelledby="faculty-math" data-name="Dr. R. Sankar" data-subject="Mathematics" data-qualifications="B.Sc., M.Sc., B.Ed., M.Phil., Ph.D." data-experience="15+ years of CBSE teaching experience" data-specialty="Algebra, Calculus &amp; Problem Solving">
                         <div class="faculty-subject">
                             <span class="icon"><i class="fas fa-calculator" aria-hidden="true"></i></span>
                             <h3 id="faculty-math">Mathematics</h3>
@@ -75,7 +94,7 @@
                         <p class="experience">15+ years of CBSE teaching experience</p>
                         <p class="specialty">Specialization: Algebra, Calculus &amp; Problem Solving</p>
                     </article>
-                    <article class="achievement-item faculty-card" aria-labelledby="faculty-chem">
+                    <article class="achievement-item faculty-card" aria-labelledby="faculty-chem" data-name="Dr. S. P. Vinodhini" data-subject="Chemistry" data-qualifications="B.Sc., M.Sc., B.Ed., M.Phil., Ph.D." data-experience="15+ years of CBSE teaching experience" data-specialty="Organic, Inorganic &amp; Physical Chemistry">
                         <div class="faculty-subject">
                             <span class="icon"><i class="fas fa-flask" aria-hidden="true"></i></span>
                             <h3 id="faculty-chem">Chemistry</h3>
@@ -85,7 +104,7 @@
                         <p class="experience">15+ years of CBSE teaching experience</p>
                         <p class="specialty">Specialization: Organic, Inorganic &amp; Physical Chemistry</p>
                     </article>
-                    <article class="achievement-item faculty-card" aria-labelledby="faculty-phys">
+                    <article class="achievement-item faculty-card" aria-labelledby="faculty-phys" data-name="Dr. R. Ganesan" data-subject="Physics" data-qualifications="B.Sc., M.Sc., B.Ed., M.Phil., Ph.D." data-experience="15+ years of CBSE teaching experience" data-specialty="Mechanics, Thermodynamics &amp; Electromagnetism">
                         <div class="faculty-subject">
                             <span class="icon"><i class="fas fa-atom" aria-hidden="true"></i></span>
                             <h3 id="faculty-phys">Physics</h3>
@@ -95,7 +114,7 @@
                         <p class="experience">15+ years of CBSE teaching experience</p>
                         <p class="specialty">Specialization: Mechanics, Thermodynamics &amp; Electromagnetism</p>
                     </article>
-                    <article class="achievement-item faculty-card" aria-labelledby="faculty-eng">
+                    <article class="achievement-item faculty-card" aria-labelledby="faculty-eng" data-name="Ms. Priya Sharma" data-subject="English" data-qualifications="B.A., M.A., B.Ed." data-experience="12+ years of CBSE teaching experience" data-specialty="Literature, Grammar &amp; Writing Skills">
                         <div class="faculty-subject">
                             <span class="icon"><i class="fas fa-book" aria-hidden="true"></i></span>
                             <h3 id="faculty-eng">English</h3>
@@ -105,7 +124,7 @@
                         <p class="experience">12+ years of CBSE teaching experience</p>
                         <p class="specialty">Specialization: Literature, Grammar &amp; Writing Skills</p>
                     </article>
-                    <article class="achievement-item faculty-card" aria-labelledby="faculty-bio">
+                    <article class="achievement-item faculty-card" aria-labelledby="faculty-bio" data-name="Dr. K. Meera" data-subject="Biology" data-qualifications="B.Sc., M.Sc., B.Ed., M.Phil., Ph.D." data-experience="13+ years of CBSE teaching experience" data-specialty="Botany, Zoology &amp; Human Physiology">
                         <div class="faculty-subject">
                             <span class="icon"><i class="fas fa-dna" aria-hidden="true"></i></span>
                             <h3 id="faculty-bio">Biology</h3>

@@ -2,6 +2,25 @@
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
+// Prefill subject from URL param if present
+(function prefillSubjectFromUrl(){
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const subjectParam = params.get('subject');
+        if (subjectParam) {
+            const subjectField = document.getElementById('subject');
+            if (subjectField) {
+                subjectField.value = decodeURIComponent(subjectParam);
+                subjectField.scrollIntoView({ behavior: 'smooth' });
+                subjectField.focus();
+            }
+        }
+    } catch (e) {
+        // ignore malformed URLs
+        console.warn('Could not parse URL params for subject', e);
+    }
+})();
+
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
