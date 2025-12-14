@@ -360,7 +360,7 @@
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 document.getElementById('userEmail').textContent = user.email;
-                document.getElementById('userName').textContent = user.email.split('@')[0];
+                document.getElementById('userName').textContent = user.displayName || user.email.split('@')[0];
                 document.getElementById('profileEmail').textContent = user.email;
                 
                 const createdDate = new Date(user.metadata.creationTime).toLocaleDateString();
