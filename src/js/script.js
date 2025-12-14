@@ -112,7 +112,7 @@ function openFacultyModal(card) {
 
     // set Book Demo link to contact page with subject prefilled
     const subjectParam = encodeURIComponent(`Book demo with ${name} (${subject})`);
-    modalBook.setAttribute('href', `../pages/contact.html?subject=${subjectParam}`);
+    modalBook.setAttribute('href', `contact.html?subject=${subjectParam}`);
 
     facultyModal.hidden = false;
     // move focus into modal
